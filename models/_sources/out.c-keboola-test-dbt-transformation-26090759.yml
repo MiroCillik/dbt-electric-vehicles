@@ -1,0 +1,24 @@
+---
+version: 2
+sources:
+  - name: out.c-keboola-test-dbt-transformation-26090759
+    freshness:
+      warn_after:
+        count: 1
+        period: day
+    database: '{{ env_var("DBT_KBC_DEV_DATABASE") }}'
+    schema: out.c-keboola-test-dbt-transformation-26090759
+    loaded_at_field: '"_timestamp"'
+    tables:
+      - name: fct_model
+        quoting:
+          database: true
+          schema: true
+          identifier: true
+        columns: []
+      - name: stg_model
+        quoting:
+          database: true
+          schema: true
+          identifier: true
+        columns: []

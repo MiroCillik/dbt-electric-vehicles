@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:developers.keboola.com)",
+      "Bash(which dbt:*)",
+      "Bash(which kbc:*)",
+      "Bash(dbt --version 2>&1 | grep -i snowflake)",
+      "Bash(brew tap:*)",
+      "Bash(echo \"n\" | dbt init dbt_ev_poc 2>&1)",
+      "Bash(cp -r dbt_ev_poc/* . && rm -rf dbt_ev_poc)",
+      "Bash(kbc dbt:*)",
+      "Bash(source .env.local && dbt debug 2>&1)",
+      "Bash(set -a && source .env.local && set +a && dbt debug 2>&1)",
+      "Bash(pip3 list:*)",
+      "Bash(python3 -c \"from dbt.adapters.keboola_snowflake import Plugin; print\\(Plugin.adapter.type\\(\\)\\)\" 2>&1 || python3 -c \"from dbt.adapters.keboolasnowflake import Plugin; print\\(Plugin.adapter.type\\(\\)\\)\" 2>&1)",
+      "Bash(pip3 install:*)",
+      "Bash(set -a && source .env.local && set +a && echo \"$DBT_KBC_DEV_PRIVATE_KEY\" | head -3)",
+      "Bash(set -a && source .env.local && set +a && printf '%s' \"$DBT_KBC_DEV_PRIVATE_KEY\" | head -c 100)",
+      "Bash(set -a && source .env.local && set +a && env | grep DBT_KBC_DEV_PRIVATE_KEY | wc -c)",
+      "Bash(set -a && source .env.local && set +a && dbt compile 2>&1)"
+    ]
+  }
+}

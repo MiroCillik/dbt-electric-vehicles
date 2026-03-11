@@ -1,0 +1,13 @@
+---
+send_anonymous_usage_stats: false
+dbt_ev_poc:
+  target: dev
+  outputs:
+    dev:
+      account: '{{ env_var("DBT_KBC_DEV_ACCOUNT") }}'
+      database: '{{ env_var("DBT_KBC_DEV_DATABASE") }}'
+      schema: '{{ env_var("DBT_KBC_DEV_SCHEMA") }}'
+      type: '{{ env_var("DBT_KBC_DEV_TYPE") }}'
+      user: '{{ env_var("DBT_KBC_DEV_USER") }}'
+      warehouse: '{{ env_var("DBT_KBC_DEV_WAREHOUSE") }}'
+      password: '{{ env_var("DBT_KBC_DEV_PASSWORD") }}'

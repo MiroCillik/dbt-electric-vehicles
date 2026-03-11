@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_electric_vehicles
+    description: "Cleaned and renamed Electric Vehicle Population Data"
+    columns:
+      - name: dol_vehicle_id
+        description: "Department of Licensing Vehicle ID"
+        tests:
+          - not_null
+          - unique
+      - name: vin
+        description: "Partial VIN (first 10 characters)"
+        tests:
+          - not_null
+      - name: make
+        description: "Vehicle manufacturer"
+        tests:
+          - not_null
+      - name: electric_vehicle_type
+        description: "BEV or PHEV"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - "Battery Electric Vehicle (BEV)"
+                  - "Plug-in Hybrid Electric Vehicle (PHEV)"

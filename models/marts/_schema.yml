@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: mart_by_make
+    description: "Vehicle count, avg range, BEV/PHEV split per manufacturer"
+    columns:
+      - name: make
+        tests:
+          - not_null
+          - unique
+
+  - name: mart_by_geography
+    description: "Vehicle count, top make, avg range per county + city"
+
+  - name: mart_cafv_eligibility
+    description: "Vehicle count, avg range, avg MSRP per eligibility status, year, and EV type"
