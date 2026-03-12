@@ -22,7 +22,6 @@ models:
         tests:
           - not_null
           - accepted_values:
-              arguments:
-                values:
-                  - "Battery Electric Vehicle (BEV)"
-                  - "Plug-in Hybrid Electric Vehicle (PHEV)"
+              values:
+                - "Battery Electric Vehicle (BEV)"
+                - "Plug-in Hybrid Electric Vehicle (PHEV)"
